@@ -34,9 +34,9 @@ class JobsCzScraper(BaseScraper):
             "locality[]": location or "praha"  # Default to Prague
         }
         
-        search_url = f"{self.base_url}/prace"
+        search_url = f"{self.base_url}/prace/"
         
-        async with httpx.AsyncClient(headers=self.headers, timeout=30) as client:
+        async with httpx.AsyncClient(headers=self.headers, timeout=30, follow_redirects=True) as client:
             try:
                 response = await client.get(search_url, params=params)
                 response.raise_for_status()
@@ -112,7 +112,7 @@ class JobsCzScraper(BaseScraper):
     
     async def get_job_details(self, job_url: str) -> Dict:
         """Get full job details"""
-        async with httpx.AsyncClient(headers=self.headers, timeout=30) as client:
+        async with httpx.AsyncClient(headers=self.headers, timeout=30, follow_redirects=True) as client:
             try:
                 response = await client.get(job_url)
                 response.raise_for_status()
