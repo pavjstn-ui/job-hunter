@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Fix ~/projects/job-hunter/scraper/profesia.py - getting 301 redirect. Add follow",
+  "description": "Fix ~/projects/job-hunter/scraper/profesia.py - getting 301 redirect. Add follow_redirects=True to httpx client",
+  "status": "pending",
+  "owner": null,
+  "result": null,
+  "created_at": "2026-03-27T11:03:59.590Z"
+}

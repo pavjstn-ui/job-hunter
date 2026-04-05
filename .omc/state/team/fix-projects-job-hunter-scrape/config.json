@@ -1,0 +1,42 @@
+{
+  "name": "fix-projects-job-hunter-scrape",
+  "task": "Fix ~/projects/job-hunter/scraper/profesia.py - getting 301 redirect. Add follow",
+  "agent_type": "codex",
+  "worker_launch_mode": "interactive",
+  "policy": {
+    "display_mode": "split_pane",
+    "worker_launch_mode": "interactive",
+    "dispatch_mode": "hook_preferred_with_fallback",
+    "dispatch_ack_timeout_ms": 15000
+  },
+  "governance": {
+    "delegation_only": false,
+    "plan_approval_required": false,
+    "nested_teams_allowed": false,
+    "one_team_per_leader_session": true,
+    "cleanup_requires_all_workers_inactive": true
+  },
+  "worker_count": 1,
+  "max_workers": 20,
+  "workers": [
+    {
+      "name": "worker-1",
+      "index": 1,
+      "role": "codex",
+      "assigned_tasks": [],
+      "working_dir": "/root/projects/job-hunter",
+      "pane_id": "%3"
+    }
+  ],
+  "created_at": "2026-03-27T11:03:59.948Z",
+  "tmux_session": "omc-team-fix-projects-job-hunter-scrape-mn8sn348:0",
+  "tmux_window_owned": true,
+  "next_task_id": 2,
+  "leader_cwd": "/root/projects/job-hunter",
+  "team_state_root": "/root/projects/job-hunter/.omc/state/team/fix-projects-job-hunter-scrape",
+  "leader_pane_id": "%2",
+  "hud_pane_id": null,
+  "resize_hook_name": null,
+  "resize_hook_target": null,
+  "workspace_mode": "single"
+}

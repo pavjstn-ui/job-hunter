@@ -1,0 +1,2 @@
+{"event_id":"8f6c354f-d99a-4665-b598-ce0b271f01df","team":"fix-projects-job-hunter-scrape","created_at":"2026-03-27T11:04:00.492Z","type":"team_leader_nudge","worker":"leader-fixed","reason":"startup_manual_intervention_required:worker-1:codex_startup_evidence_missing"}
+{"event_id":"d0330fbb-c929-4028-8ed1-dd564297012d","team":"fix-projects-job-hunter-scrape","created_at":"2026-03-27T11:04:00.493Z","type":"team_leader_nudge","worker":"leader-fixed","reason":"start_team_v2: workers=1 tasks=1 panes=1"}

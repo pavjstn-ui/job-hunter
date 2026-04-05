@@ -1,0 +1,77 @@
+# Job Hunter Configuration
+# Target markets and search parameters
+
+search:
+  keywords:
+    primary:
+      - "AI Engineer"
+      - "ML Engineer"
+      - "Machine Learning Engineer"
+      - "Research Engineer"
+      - "AI Solution Architect"
+      - "Data Scientist"
+      - "MLOps Engineer"
+    secondary:
+      - "SOC Analyst"
+      - "Security Analyst"
+      - "Cybersecurity Analyst"
+  
+  locations:
+    - name: "Bratislava"
+      country: "Slovakia"
+      source: "profesia"
+    - name: "Prague"
+      country: "Czech Republic"
+      source: "jobscz"
+    - name: "Vienna"
+      country: "Austria"
+      source: "karriere"
+    - name: "Remote EU"
+      country: "EU"
+      source: "all"
+
+  salary:
+    min_eur: 45000
+    currency: "EUR"
+
+  exclude_keywords:
+    - "Senior Principal"
+    - "Staff Engineer"
+    - "10+ years"
+    - "Director"
+
+target_companies:
+  priority:
+    - "ESET"
+    - "Renomia"
+    - "Ableneo"
+  preferred:
+    - "Accenture"
+    - "PwC"
+    - "Deloitte"
+    - "KPMG"
+    - "McKinsey"
+    - "BCG"
+
+scoring:
+  weights:
+    keyword_match: 0.3
+    company_match: 0.25
+    location_match: 0.2
+    salary_match: 0.15
+    recency: 0.1
+  
+  thresholds:
+    auto_apply: 0.85      # Score above this: auto-approve
+    manual_review: 0.60   # Score above this: send for approval
+    reject: 0.60          # Below this: skip
+
+telegram:
+  approval_timeout_hours: 24
+  daily_limit: 20
+
+scrape_schedule:
+  interval_minutes: 60
+  active_hours:
+    start: 8
+    end: 22

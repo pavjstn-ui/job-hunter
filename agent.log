@@ -1,0 +1,1472 @@
+nohup: ignoring input
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 26972.17it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/projects/job-hunter/venv/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/utils.py:184: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, store_uri)
+MLflow tracker initialized: job-applications
+Job Hunter Agent initialized
+  LLM Provider: deepseek
+  Dry run: True
+Warning: CV not found at cv/cv_base.pdf
+Place your CV there for RAG-based cover letters
+Starting main loop (interval: 60 minutes)
+
+============================================================
+Starting cycle at 2026-04-03T08:44:34.148900
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 14 jobs
+Scraped 107 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T09:45:49.555188
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 14 jobs
+Scraped 107 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T10:47:01.269880
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 14 jobs
+Scraped 107 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T11:48:15.338841
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 61
+Auto-apply: 0
+Manual review: 5
+Rejected: 56
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 672, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 4865, in get_updates
+    await self._post(
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.NetworkError: Bad Gateway
+Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 672, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 4865, in get_updates
+    await self._post(
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.NetworkError: Bad Gateway
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T12:49:26.534660
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T13:50:39.264110
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T14:51:59.891189
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T15:53:22.050907
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T16:54:41.468576
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T17:55:46.825451
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T18:56:54.711718
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T19:57:58.371641
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+Error searching karriere.at: Server error '500 Internal Server Error' for url 'https://www.karriere.at/jobs?keywords=Machine+Learning+Engineer'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+  karriere/Machine Learning Engineer: 0 jobs
+Scraped 93 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T20:59:13.591919
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 18 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 108 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T22:00:28.001284
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 61
+Auto-apply: 0
+Manual review: 5
+Rejected: 56
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-03T23:01:55.835601
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T00:03:09.425128
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T01:04:32.376168
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T02:05:54.432770
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T03:07:13.303349
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T04:08:25.715378
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T05:09:39.263639
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 5
+Rejected: 55
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T06:10:57.700642
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T07:12:19.177155
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T08:13:52.640249
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T09:15:16.913528
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T10:16:33.948738
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T11:18:12.297463
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T12:19:25.608330
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T13:21:03.275739
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T14:22:22.243161
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T15:23:36.358823
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T16:24:55.662060
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T17:26:08.488730
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T18:27:41.236016
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T19:29:00.605545
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T20:30:20.885393
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T21:31:52.439992
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 16 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 106 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T22:33:09.964614
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-04T23:34:31.207076
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-05T00:35:39.506720
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-05T01:36:53.004593
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-05T02:38:01.123297
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+
+============================================================
+Starting cycle at 2026-04-05T03:39:07.884153
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Redirect response '301 Moved Permanently' for url 'https://www.jobs.cz/prace?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+Redirect location: 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
