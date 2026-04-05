@@ -2,3 +2,7 @@ venv/
 .env
 .env
 .aider*
+chroma_db/
+cv/
+**/__pycache__/
+**/*.pyc
