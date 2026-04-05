@@ -28,21 +28,23 @@ def chunk_cv_by_section(cv_text: str) -> List[Dict[str, str]]:
     """
     chunks = []
     
-    # Common CV section headers
+    # Common CV section headers - remove inline (?i) flags
     section_patterns = [
-        r"(?i)(professional\s+summary|summary|profile|objective)",
-        r"(?i)(work\s+experience|experience|employment|career\s+history)",
-        r"(?i)(education|academic|qualifications)",
-        r"(?i)(skills|technical\s+skills|competencies|technologies)",
-        r"(?i)(certifications?|certificates?|credentials)",
-        r"(?i)(projects?|portfolio|key\s+projects)",
-        r"(?i)(languages?|language\s+skills)",
-        r"(?i)(publications?|research|papers)",
-        r"(?i)(awards?|achievements?|honors?)",
+        r"(professional\s+summary|summary|profile|objective)",
+        r"(work\s+experience|experience|employment|career\s+history)",
+        r"(education|academic|qualifications)",
+        r"(skills|technical\s+skills|competencies|technologies)",
+        r"(certifications?|certificates?|credentials)",
+        r"(projects?|portfolio|key\s+projects)",
+        r"(languages?|language\s+skills)",
+        r"(publications?|research|papers)",
+        r"(awards?|achievements?|honors?)",
     ]
     
     # Split by section headers
+    # Build combined pattern without inline flags
     combined_pattern = "|".join(f"({p})" for p in section_patterns)
+    # Use flags parameter for case-insensitive matching
     sections = re.split(f"({combined_pattern})", cv_text, flags=re.IGNORECASE)
     
     current_section = "header"
@@ -56,7 +58,8 @@ def chunk_cv_by_section(cv_text: str) -> List[Dict[str, str]]:
         # Check if this is a section header
         is_header = False
         for pattern in section_patterns:
-            if re.match(pattern, part.strip(), re.IGNORECASE):
+            # Use re.IGNORECASE flag in match
+            if re.match(pattern, part.strip(), flags=re.IGNORECASE):
                 # Save previous section
                 if current_text.strip():
                     chunks.append({
