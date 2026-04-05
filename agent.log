@@ -1470,3 +1470,265 @@ Auto-apply: 0
 Manual review: 6
 Rejected: 54
 Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Sun Apr  5 06:26:37 PM UTC 2026: Starting Job Hunter Agent via start.sh
+Sun Apr  5 06:26:37 PM UTC 2026: Agent started with PID 242597
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7544.90it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/root/projects/job-hunter/venv/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/utils.py:184: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, store_uri)
+MLflow tracker initialized: job-applications
+Job Hunter Agent initialized
+  LLM Provider: deepseek
+  Dry run: False
+Ingesting CV...
+Extracted 4249 characters from CV
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/agent.py", line 274, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/agent.py", line 267, in main
+    await agent.run()
+  File "/root/projects/job-hunter/agent.py", line 95, in run
+    await self.setup()
+  File "/root/projects/job-hunter/agent.py", line 81, in setup
+    ingest_cv(str(cv_path), self.vectorstore)
+  File "/root/projects/job-hunter/rag/ingest.py", line 182, in ingest_cv
+    chunks = chunk_cv_by_section(cv_text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/rag/ingest.py", line 46, in chunk_cv_by_section
+    sections = re.split(f"({combined_pattern})", cv_text, flags=re.IGNORECASE)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 207, in split
+    return _compile(pattern, flags).split(string, maxsplit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 979, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 862, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 862, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
+    raise source.error('global flags not at the start '
+re.error: global flags not at the start of the expression at position 2
+Sun Apr  5 06:39:40 PM UTC 2026: Starting Job Hunter Agent via start.sh
+Sun Apr  5 06:39:40 PM UTC 2026: Agent started with PID 244425
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 27198.02it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/root/projects/job-hunter/venv/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/utils.py:184: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, store_uri)
+MLflow tracker initialized: job-applications
+Job Hunter Agent initialized
+  LLM Provider: deepseek
+  Dry run: False
+Ingesting CV...
+Extracted 4249 characters from CV
+Created 11 section-based chunks
+Total chunks after skill extraction: 18
+Added 18 CV chunks to vector store
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/http11.py", line 136, in handle_async_request
+    raise exc
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_backends/anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/job-hunter/agent.py", line 274, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/agent.py", line 267, in main
+    await agent.run()
+  File "/root/projects/job-hunter/agent.py", line 95, in run
+    await self.setup()
+  File "/root/projects/job-hunter/agent.py", line 87, in setup
+    await self.bot.start_async()
+  File "/root/projects/job-hunter/bot/telegram.py", line 275, in start_async
+    await self.app.initialize()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 857, in initialize
+    await self.get_me()
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 2008, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 990, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/job-hunter/venv/lib/python3.12/site-packages/telegram/request/_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+Sun Apr  5 06:40:46 PM UTC 2026: Starting Job Hunter Agent via start.sh
+Sun Apr  5 06:40:46 PM UTC 2026: Agent started with PID 244521
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 50587.04it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/root/projects/job-hunter/venv/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/utils.py:184: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, store_uri)
+MLflow tracker initialized: job-applications
+Job Hunter Agent initialized
+  LLM Provider: deepseek
+  Dry run: False
+Ingesting CV...
+Extracted 4249 characters from CV
+Created 11 section-based chunks
+Total chunks after skill extraction: 18
+Added 18 CV chunks to vector store
+Starting main loop (interval: 60 minutes)
+
+============================================================
+Starting cycle at 2026-04-05T18:40:55.583821
+============================================================
+  profesia/AI Engineer: 20 jobs
+  profesia/ML Engineer: 20 jobs
+  profesia/Machine Learning Engineer: 20 jobs
+Error searching jobs.cz: Server error '500 Internal Server Error' for url 'https://www.jobs.cz/prace/?q%5B%5D=AI+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+  jobscz/AI Engineer: 0 jobs
+Error searching jobs.cz: Server error '500 Internal Server Error' for url 'https://www.jobs.cz/prace/?q%5B%5D=ML+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+  jobscz/ML Engineer: 0 jobs
+Error searching jobs.cz: Server error '500 Internal Server Error' for url 'https://www.jobs.cz/prace/?q%5B%5D=Machine+Learning+Engineer&locality%5B%5D=praha'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+  jobscz/Machine Learning Engineer: 0 jobs
+  karriere/AI Engineer: 15 jobs
+  karriere/ML Engineer: 15 jobs
+  karriere/Machine Learning Engineer: 15 jobs
+Scraped 105 total jobs
+New jobs: 60
+Auto-apply: 0
+Manual review: 6
+Rejected: 54
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: Junior AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC
+Generating cover letter for: AI Engineer – Python, GenAI & Machine Learning (m/f) @ PwC

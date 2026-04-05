@@ -45,7 +45,7 @@ def chunk_cv_by_section(cv_text: str) -> List[Dict[str, str]]:
     # Build combined pattern without inline flags
     combined_pattern = "|".join(f"({p})" for p in section_patterns)
     # Use flags parameter for case-insensitive matching
-    sections = re.split(f"({combined_pattern})", cv_text, flags=re.IGNORECASE)
+    sections = re.split(combined_pattern, cv_text, flags=re.IGNORECASE)
     
     current_section = "header"
     current_text = ""
