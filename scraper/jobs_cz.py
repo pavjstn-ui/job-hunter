@@ -11,29 +11,32 @@ class JobsCzScraper:
     
     def __init__(self, config: Dict = None):
         self.config = config or {}
-        self.base_url = "https://www.jobs.cz/prace/"
+        self.base_url = "https://www.jobs.cz/en/"
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "cs-CZ,cs;q=0.9,en;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive"
         }
     
     async def search(self, keyword: str, location: str = None) -> List[Dict]:
         """
-        Search for jobs on jobs.cz
+        Search for jobs on jobs.cz (English version)
         
         Args:
             keyword: Search term
-            location: Optional location filter
+            location: Optional location filter (ignored for now as per instructions)
             
         Returns:
             List of job dicts with keys: title, company, url, location, source
         """
         jobs = []
         
+        # Only use q[] parameter, drop locality as per instructions
         params = {
             "q[]": keyword,
         }
-        if location:
-            params["locality[]"] = location
             
         try:
             async with httpx.AsyncClient(
@@ -49,54 +52,68 @@ class JobsCzScraper:
                 
                 soup = BeautifulSoup(response.text, 'html.parser')
                 
-                # Find job listings - looking for elements that contain job information
-                # Based on the provided HTML structure, job cards appear to be in various divs
-                # Let's try to find job title links first
-                job_links = soup.select('h2 a[href*="/rpd/"]')
+                # Based on the provided HTML structure, job listings are in <article> elements
+                # Let's find all job cards
+                job_cards = soup.find_all('article')
                 
-                for link in job_links:
+                for card in job_cards:
                     try:
-                        title = link.get_text(strip=True)
-                        url = link.get('href')
+                        # Find the job title link - looking for h2 or h3 with a link containing /rpd/
+                        title_elem = card.find('h2') or card.find('h3')
+                        if not title_elem:
+                            continue
+                            
+                        link_elem = title_elem.find('a', href=lambda x: x and '/rpd/' in x)
+                        if not link_elem:
+                            continue
+                            
+                        title = link_elem.get_text(strip=True)
+                        url = link_elem.get('href')
                         
                         if not url.startswith('http'):
                             url = f"https://www.jobs.cz{url}" if url.startswith('/') else f"https://www.jobs.cz/{url}"
                         
-                        # Find company - look for elements with company info
-                        # In the provided HTML, company appears in list items after the job card
-                        job_card = link.find_parent('article') or link.find_parent('div') or link.find_parent('li')
-                        company = None
-                        location_text = location or ""
+                        # Extract company - in the provided HTML, company is in a list item
+                        company = "Not specified"
+                        location_text = ""
                         
-                        if job_card:
-                            # Try to find company in various possible selectors
-                            company_elem = job_card.select_one('.SearchResultCard__footerItem')
-                            if not company_elem:
-                                # Try other possible selectors
-                                company_elem = job_card.select_one('li:first-child')
-                            
-                            if company_elem:
-                                company = company_elem.get_text(strip=True)
-                                # Sometimes company text includes location, try to clean it
-                                if '—' in company:
-                                    parts = company.split('—')
-                                    company = parts[0].strip()
-                                    if len(parts) > 1 and not location_text:
-                                        location_text = parts[1].strip()
-                            
-                            # If still no company, try to find in sibling elements
-                            if not company:
-                                # Look for company in nearby elements
-                                next_siblings = job_card.find_next_siblings('ul')
-                                for sibling in next_siblings[:2]:  # Check first couple of sibling uls
-                                    li_items = sibling.find_all('li')
-                                    if li_items:
-                                        company = li_items[0].get_text(strip=True)
-                                        break
+                        # Look for company information
+                        # In the sample HTML, company appears in list items or specific spans
+                        # Let's look for text that might contain company name
+                        # First, try to find list items
+                        list_items = card.find_all('li')
+                        if list_items:
+                            # The first list item often contains company
+                            company_text = list_items[0].get_text(strip=True)
+                            # Sometimes it contains location separated by em dash
+                            if '—' in company_text:
+                                parts = company_text.split('—')
+                                company = parts[0].strip()
+                                if len(parts) > 1:
+                                    location_text = parts[1].strip()
+                            else:
+                                company = company_text
                         
-                        # If company still not found, use a placeholder
-                        if not company:
-                            company = "Not specified"
+                        # If we didn't find company in list items, try other approaches
+                        if company == "Not specified":
+                            # Look for spans with company info
+                            spans = card.find_all('span')
+                            for span in spans:
+                                text = span.get_text(strip=True)
+                                if text and len(text) < 100:  # Company names are usually short
+                                    company = text
+                                    break
+                        
+                        # Try to extract location from other list items if not found
+                        if not location_text and len(list_items) > 1:
+                            # The second list item might have location
+                            location_text = list_items[1].get_text(strip=True)
+                        
+                        # Also look for location in other elements
+                        if not location_text:
+                            location_elems = card.find_all(string=lambda x: 'Praha' in str(x) or 'Brno' in str(x) if x else False)
+                            if location_elems:
+                                location_text = location_elems[0].strip()
                         
                         job_data = {
                             "title": title,
@@ -112,39 +129,43 @@ class JobsCzScraper:
                         logger.warning(f"Error parsing job listing: {e}")
                         continue
                 
-                # If we didn't find jobs with the first method, try alternative approach
+                # If we didn't find jobs with the first method, try a broader approach
                 if not jobs:
-                    # Look for job cards in the search results
-                    job_cards = soup.select('article, .search-result, .job-card')
-                    for card in job_cards:
+                    # Look for all links containing /rpd/
+                    job_links = soup.find_all('a', href=lambda x: x and '/rpd/' in x)
+                    for link in job_links:
                         try:
-                            title_elem = card.select_one('h2 a, h3 a, .job-title a')
-                            if not title_elem:
+                            title = link.get_text(strip=True)
+                            if not title:
                                 continue
                                 
-                            title = title_elem.get_text(strip=True)
-                            url = title_elem.get('href')
-                            
+                            url = link.get('href')
                             if not url.startswith('http'):
                                 url = f"https://www.jobs.cz{url}" if url.startswith('/') else f"https://www.jobs.cz/{url}"
                             
-                            # Try to extract company
-                            company_elem = card.select_one('.company, .employer, .firma')
-                            company = company_elem.get_text(strip=True) if company_elem else "Not specified"
+                            # Find parent element to look for company and location
+                            parent = link.find_parent(['article', 'div', 'li'])
+                            company = "Not specified"
+                            location_text = ""
                             
-                            # Try to extract location
-                            location_elem = card.select_one('.location, .misto, .localita')
-                            job_location = location_elem.get_text(strip=True) if location_elem else (location or "")
+                            if parent:
+                                # Look for company in nearby elements
+                                text_elements = parent.find_all(string=True)
+                                for text in text_elements:
+                                    t = text.strip()
+                                    if t and t != title and len(t) < 100:
+                                        company = t
+                                        break
                             
                             jobs.append({
                                 "title": title,
                                 "company": company,
                                 "url": url,
-                                "location": job_location,
+                                "location": location_text,
                                 "source": "jobs.cz"
                             })
                         except Exception as e:
-                            logger.debug(f"Error parsing alternative job card: {e}")
+                            logger.debug(f"Error parsing alternative job link: {e}")
                             continue
                 
                 logger.info(f"Found {len(jobs)} jobs from jobs.cz")
@@ -178,7 +199,7 @@ class JobsCzScraper:
 if __name__ == "__main__":
     async def test():
         scraper = JobsCzScraper()
-        jobs = await scraper.search("AI engineer", "Praha")
+        jobs = await scraper.search("AI engineer")
         print(f"Found {len(jobs)} jobs")
         for job in jobs[:3]:
             print(f"Title: {job['title']}")
