@@ -6,6 +6,7 @@ Handles login, session management, and job applications.
 import os
 import asyncio
 import random
+import re
 from pathlib import Path
 from datetime import datetime
 from playwright.async_api import async_playwright, Page, Browser, BrowserContext
@@ -245,6 +246,16 @@ class JobsCzApplier:
         logger.info("Not logged in, attempting login")
         return await self.login()
 
+    def _extract_job_id_from_url(self, job_url: str) -> str:
+        """Extract job ID from jobs.cz job URL"""
+        # Pattern to match jobs.cz job URLs like https://www.jobs.cz/rpd/JOBID/
+        pattern = r'https?://www\.jobs\.cz/rpd/(\d+)/?'
+        match = re.search(pattern, job_url)
+        if match:
+            return match.group(1)
+        else:
+            raise ValueError(f"Could not extract job ID from URL: {job_url}")
+
     async def apply_to_job(self, job_url: str, cover_letter_text: str) -> dict:
         """
         Apply to a job on jobs.cz
@@ -268,9 +279,16 @@ class JobsCzApplier:
                 result["message"] = "Failed to login"
                 return result
 
-            # Navigate to job URL
-            logger.info(f"Navigating to job: {job_url}")
-            await self.page.goto(job_url, wait_until="domcontentloaded")
+            # Extract job ID from the job URL
+            job_id = self._extract_job_id_from_url(job_url)
+            logger.info(f"Extracted job ID: {job_id}")
+
+            # Construct the form URL directly
+            form_url = f"https://www.jobs.cz/jof/{job_id}/"
+            logger.info(f"Navigating to form URL: {form_url}")
+
+            # Navigate directly to the form URL
+            await self.page.goto(form_url, wait_until="domcontentloaded")
             await self._random_delay(1, 2)
 
             # Check if already applied
@@ -279,39 +297,6 @@ class JobsCzApplier:
                 logger.info("Already applied to this job")
                 result["success"] = True
                 result["message"] = "Already applied"
-                return result
-
-            # Look for "Odpovědět" link (Reply)
-            logger.info("Looking for apply link")
-            
-            # Debug: print all links on page
-            links = await self.page.query_selector_all('a')
-            logger.info(f"Found {len(links)} links on page")
-            for i, link in enumerate(links[:10]):  # First 10
-                text = await link.inner_text()
-                logger.info(f"Link {i}: {text}")
-
-            # Also check for buttons that might be apply buttons
-            buttons = await self.page.query_selector_all('button')
-            logger.info(f"Found {len(buttons)} buttons on page")
-            for i, btn in enumerate(buttons[:10]):
-                text = await btn.inner_text()
-                logger.info(f"Button {i}: {text}")
-
-            # Wait for the "Odpovědět" link to appear
-            logger.info("Waiting for 'Odpovědět' link to appear")
-            await self.page.wait_for_selector('a:has-text("Odpovědět")', timeout=10000)
-            
-            # Find and click the "Odpovědět" link
-            apply_link = await self.page.query_selector('a:has-text("Odpovědět")')
-            if apply_link:
-                logger.info("Found 'Odpovědět' link")
-                await apply_link.click()
-                await self._random_delay(1, 2)
-            else:
-                result["message"] = "Apply link not found"
-                await self._take_screenshot("apply_link_not_found")
-                result["screenshot_path"] = self._get_latest_screenshot()
                 return result
 
             # Fill application form with cover letter
