@@ -137,27 +137,27 @@ class JobHunterAgent:
         print(f"New jobs: {len(new_jobs)}")
         
         if not new_jobs:
-            print("No new jobs found")
-            return
-        
-        # 3. Score and categorize
-        categorized = filter_jobs(new_jobs, self.scorer)
-        print(f"Auto-apply: {len(categorized['auto_apply'])}")
-        print(f"Manual review: {len(categorized['manual_review'])}")
-        print(f"Rejected: {len(categorized['reject'])}")
-        
-        # 4. Process auto-apply candidates
-        for job in categorized["auto_apply"][:5]:  # Limit per cycle
-            await self._process_job(job, auto=True)
-        
-        # 5. Send manual review to Telegram
-        for job in categorized["manual_review"][:10]:
-            await self._process_job(job, auto=False)
-        
-        # 6. Store rejected for reference
-        for job in categorized["reject"]:
-            job_id = self.db.add_job(job)
-            self.db.update_status(job_id, JobStatus.REJECTED)
+            print("No new jobs found from scrapers")
+            # Continue to LinkedIn feed processing
+        else:
+            # 3. Score and categorize
+            categorized = filter_jobs(new_jobs, self.scorer)
+            print(f"Auto-apply: {len(categorized['auto_apply'])}")
+            print(f"Manual review: {len(categorized['manual_review'])}")
+            print(f"Rejected: {len(categorized['reject'])}")
+            
+            # 4. Process auto-apply candidates
+            for job in categorized["auto_apply"][:5]:  # Limit per cycle
+                await self._process_job(job, auto=True)
+            
+            # 5. Send manual review to Telegram
+            for job in categorized["manual_review"][:10]:
+                await self._process_job(job, auto=False)
+            
+            # 6. Store rejected for reference
+            for job in categorized["reject"]:
+                job_id = self.db.add_job(job)
+                self.db.update_status(job_id, JobStatus.REJECTED)
 
         # 7. Process LinkedIn URLs from email feed
         print("\n" + "="*60)
