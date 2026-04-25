@@ -198,18 +198,25 @@ class JobHunterAgent:
     
     async def _process_linkedin_feed(self):
         """Process LinkedIn job URLs from /tmp/linkedin_jobs.txt"""
+        print(f"\n{'='*60}")
+        print("Checking LinkedIn feed...")
+        print(f"{'='*60}")
+        
         feed_file = "/tmp/linkedin_jobs.txt"
         if not os.path.exists(feed_file):
+            print("No LinkedIn feed file found")
             return
 
         with open(feed_file, 'r') as f:
             urls = [line.strip() for line in f if line.strip() and line.strip().startswith('http')]
 
         if not urls:
+            print("No LinkedIn URLs found in feed")
             return
 
-        print(f"\nProcessing {len(urls)} LinkedIn jobs from email feed")
+        print(f"Found {len(urls)} LinkedIn URLs in feed")
 
+        processed_count = 0
         for url in urls[:20]:  # Limit to 20 per cycle
             try:
                 job = await self.scrapers['linkedin'].get_job_details(url)
@@ -218,9 +225,12 @@ class JobHunterAgent:
 
                 if score_result['decision'] == 'manual_review':
                     await self._process_job(job, auto=False)
+                    processed_count += 1
 
             except Exception as e:
                 print(f"Error processing {url}: {e}")
+
+        print(f"Processed {processed_count} LinkedIn jobs")
 
         # Clear feed file
         open(feed_file, 'w').close()
