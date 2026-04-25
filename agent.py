@@ -20,8 +20,14 @@ from tracking.mlflow_logger import ApplicationTracker
 from scraper.profesia import ProfesiaScraper
 from scraper.jobscz import JobsCzScraper
 from scraper.karriere import KarriereScraper
+from scraper.linkedin_scraper import LinkedInScraper
 from scraper.scorer import JobScorer, filter_jobs
 from bot.telegram import ApprovalBot
+from playwright_applier import JobsCzApplier
+
+# Import new scrapers
+from scraper.startupjobs_scraper import StartupJobsScraper
+from scraper.remoteok_scraper import RemoteOkScraper
 
 load_dotenv()
 
@@ -55,7 +61,10 @@ class JobHunterAgent:
         self.scrapers = {
             "profesia": ProfesiaScraper(self.config),
             "jobscz": JobsCzScraper(self.config),
-            "karriere": KarriereScraper(self.config)
+            "karriere": KarriereScraper(self.config),
+            "linkedin": LinkedInScraper(self.config),
+            "startupjobs": StartupJobsScraper(self.config),
+            "remoteok": RemoteOkScraper(self.config)
         }
         
         # Initialize Telegram bot
@@ -149,6 +158,9 @@ class JobHunterAgent:
         for job in categorized["reject"]:
             job_id = self.db.add_job(job)
             self.db.update_status(job_id, JobStatus.REJECTED)
+
+        # 7. Process LinkedIn URLs from email feed
+        await self._process_linkedin_feed()
     
     async def _scrape_all(self) -> List[Dict]:
         """Scrape all configured sources"""
@@ -157,6 +169,10 @@ class JobHunterAgent:
         primary_keywords = keywords.get("primary", [])[:3]  # Top 3 keywords
         
         for source, scraper in self.scrapers.items():
+            # Skip the "all" source which is handled differently
+            if source == "all":
+                continue
+                
             for keyword in primary_keywords:
                 try:
                     jobs = await scraper.search(keyword)
@@ -180,28 +196,61 @@ class JobHunterAgent:
         
         return new_jobs
     
-    async def _process_job(self, job: Dict, auto: bool = False):
-        """Process a single job: save, generate cover letter, queue for approval"""
-        # Save to DB
-        job_id = self.db.add_job(job)
-        job["id"] = job_id
-        
-        # Get full job details if available
-        scraper = self.scrapers.get(job.get("source"))
-        if scraper and job.get("url"):
+    async def _process_linkedin_feed(self):
+        """Process LinkedIn job URLs from /tmp/linkedin_jobs.txt"""
+        feed_file = "/tmp/linkedin_jobs.txt"
+        if not os.path.exists(feed_file):
+            return
+
+        with open(feed_file, 'r') as f:
+            urls = [line.strip() for line in f if line.strip() and line.strip().startswith('http')]
+
+        if not urls:
+            return
+
+        print(f"\nProcessing {len(urls)} LinkedIn jobs from email feed")
+
+        for url in urls[:20]:  # Limit to 20 per cycle
             try:
-                details = await scraper.get_job_details(job["url"])
-                job.update(details)
-            except:
-                pass
-        
-        # Generate cover letter
-        print(f"Generating cover letter for: {job['title']} @ {job['company']}")
-        result = self.generator.generate_from_job(job)
-        job["cover_letter"] = result["cover_letter"]
-        
-        # Save cover letter
-        self.db.set_cover_letter(job_id, result["cover_letter"])
+                job = await self.scrapers['linkedin'].get_job_details(url)
+                score_result = self.scorer.score(job)
+                job['score'] = score_result['score']
+
+                if score_result['decision'] == 'manual_review':
+                    await self._process_job(job, auto=False)
+
+            except Exception as e:
+                print(f"Error processing {url}: {e}")
+
+        # Clear feed file
+        open(feed_file, 'w').close()
+
+    async def _process_job(self, job: Dict, auto: bool = False):
+        """Process a single job: save to DB, queue for approval (NO cover letter yet)"""
+        # Check if job already exists in DB (by external_id)
+        existing_job = self.db.get_job_by_external_id(job.get("external_id"))
+
+        if existing_job:
+            # Job already exists, reuse its data
+            job_id = existing_job["id"]
+            job["id"] = job_id
+            print(f"Job already exists: {job['title']} @ {job['company']}")
+        else:
+            # New job - save to DB
+            job_id = self.db.add_job(job)
+            job["id"] = job_id
+
+            # Get full job details if available
+            scraper = self.scrapers.get(job.get("source"))
+            if scraper and job.get("url"):
+                try:
+                    details = await scraper.get_job_details(job["url"])
+                    job.update(details)
+                except:
+                    pass
+
+        # ❌ REMOVED: Cover letter generation moved to _on_approve callback
+        # Cover letters are now ONLY generated when user approves via Telegram
         
         if auto and not self.dry_run:
             # Auto-apply (if we had apply functionality)
@@ -216,11 +265,20 @@ class JobHunterAgent:
             await self.bot.request_approval(job)
     
     async def _on_approve(self, job_id: int, job: Dict):
-        """Handle approval from Telegram"""
+        """Handle approval from Telegram - Generate cover letter and log"""
         print(f"Approved: {job['title']} @ {job['company']}")
-        
+
         self.db.update_status(job_id, JobStatus.APPROVED)
-        
+
+        # ✅ Generate cover letter ONLY on approval
+        print(f"Generating cover letter for approved job: {job['title']} @ {job['company']}")
+        result = self.generator.generate_from_job(job)
+        cover_letter = result["cover_letter"]
+
+        # Save cover letter to DB
+        self.db.set_cover_letter(job_id, cover_letter)
+        job["cover_letter"] = cover_letter
+
         # Log to MLflow
         run_id = self.tracker.log_application(
             job_id=job_id,
@@ -229,7 +287,7 @@ class JobHunterAgent:
             source=job.get("source", ""),
             score=job.get("score", 0),
             score_breakdown=job.get("score_breakdown", {}),
-            cover_letter=job.get("cover_letter", ""),
+            cover_letter=cover_letter,  # Use freshly generated CL
             cover_letter_version=1,
             status="approved",
             location=job.get("location", ""),
@@ -239,13 +297,95 @@ class JobHunterAgent:
         )
         
         print(f"Logged to MLflow: {run_id}")
-        
-        # TODO: Actual application submission
-        # For now, just mark as needing manual application
-        await self.bot.send_notification(
-            f"✅ Ready to apply: {job['title']} @ {job['company']}\n"
-            f"📝 Cover letter saved. Apply manually at:\n{job.get('url', 'No URL')}"
-        )
+
+        # Apply to job using Playwright (if not dry run and if it's a jobs.cz posting)
+        job_url = job.get('url', '')
+        application_result = None
+
+        if self.dry_run:
+            # Dry run mode - don't actually apply
+            await self.bot.send_notification(
+                f"🧪 DRY RUN - Would apply to:\n"
+                f"*{job['title']}* @ {job['company']}\n"
+                f"📝 Cover letter generated\n"
+                f"🔗 {job_url}"
+            )
+        elif 'jobs.cz' in job_url:
+            # Apply automatically using Playwright for jobs.cz
+            try:
+                print(f"Applying to job via Playwright: {job_url}")
+                await self.bot.send_notification(
+                    f"🤖 Applying automatically to:\n"
+                    f"*{job['title']}* @ {job['company']}\n"
+                    f"Please wait..."
+                )
+
+                async with JobsCzApplier() as applier:
+                    application_result = await applier.apply_to_job(job_url, cover_letter)
+
+                if application_result['success']:
+                    # Update status to applied
+                    self.db.update_status(job_id, JobStatus.APPLIED)
+
+                    # Log application success to MLflow
+                    self.tracker.log_application_result(
+                        run_id=run_id,
+                        applied=True,
+                        result_message=application_result['message']
+                    )
+
+                    await self.bot.send_notification(
+                        f"✅ Applied successfully!\n"
+                        f"*{job['title']}* @ {job['company']}\n"
+                        f"📝 {application_result['message']}\n"
+                        f"🔗 {job_url}"
+                    )
+                else:
+                    # Application failed
+                    error_msg = application_result['message']
+                    print(f"Application failed: {error_msg}")
+
+                    # Log failure to MLflow
+                    self.tracker.log_application_result(
+                        run_id=run_id,
+                        applied=False,
+                        result_message=f"Failed: {error_msg}"
+                    )
+
+                    screenshot_info = ""
+                    if application_result.get('screenshot_path'):
+                        screenshot_info = f"\n📸 Screenshot: {application_result['screenshot_path']}"
+
+                    await self.bot.send_notification(
+                        f"❌ Application failed:\n"
+                        f"*{job['title']}* @ {job['company']}\n"
+                        f"Error: {error_msg}{screenshot_info}\n"
+                        f"Please apply manually at:\n{job_url}"
+                    )
+
+            except Exception as e:
+                print(f"Error during automatic application: {e}")
+
+                # Log error to MLflow
+                self.tracker.log_application_result(
+                    run_id=run_id,
+                    applied=False,
+                    result_message=f"Error: {str(e)}"
+                )
+
+                await self.bot.send_notification(
+                    f"❌ Error applying automatically:\n"
+                    f"*{job['title']}* @ {job['company']}\n"
+                    f"Error: {str(e)}\n"
+                    f"📝 Cover letter saved. Apply manually at:\n{job_url}"
+                )
+        else:
+            # Not a jobs.cz posting - manual application required
+            await self.bot.send_notification(
+                f"✅ Ready to apply: *{job['title']}* @ {job['company']}\n"
+                f"📝 Cover letter saved. Apply manually at:\n{job_url}\n"
+                f"ℹ️ Automatic application only supported for jobs.cz"
+            )
     
     async def _on_reject(self, job_id: int, job: Dict):
         """Handle rejection from Telegram"""
