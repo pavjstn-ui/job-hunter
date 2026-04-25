@@ -160,6 +160,9 @@ class JobHunterAgent:
             self.db.update_status(job_id, JobStatus.REJECTED)
 
         # 7. Process LinkedIn URLs from email feed
+        print("\n" + "="*60)
+        print("ABOUT TO PROCESS LINKEDIN FEED")
+        print("="*60)
         await self._process_linkedin_feed()
     
     async def _scrape_all(self) -> List[Dict]:
@@ -198,9 +201,9 @@ class JobHunterAgent:
     
     async def _process_linkedin_feed(self):
         """Process LinkedIn job URLs from /tmp/linkedin_jobs.txt"""
-        print(f"\n{'='*60}")
-        print("Checking LinkedIn feed...")
-        print(f"{'='*60}")
+        print("\n" + "="*60)
+        print("INSIDE _process_linkedin_feed() - METHOD STARTED")
+        print("="*60)
         
         feed_file = "/tmp/linkedin_jobs.txt"
         if not os.path.exists(feed_file):
