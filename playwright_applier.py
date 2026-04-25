@@ -281,36 +281,36 @@ class JobsCzApplier:
                 result["message"] = "Already applied"
                 return result
 
-            # Look for "Odpovědět" button (Reply)
-            logger.info("Looking for apply button")
+            # Look for "Odpovědět" link (Reply)
+            logger.info("Looking for apply link")
             
-            # Debug: print all buttons on page
-            buttons = await self.page.query_selector_all('button')
-            logger.info(f"Found {len(buttons)} buttons on page")
-            for i, btn in enumerate(buttons[:10]):  # First 10
-                text = await btn.inner_text()
-                logger.info(f"Button {i}: {text}")
-
-            # Also check for links that might be apply buttons
-            links = await self.page.query_selector_all('a[href*="prihlasit"], a:has-text("Přihlásit"), a:has-text("Apply")')
-            logger.info(f"Found {len(links)} potential apply links")
-            for i, link in enumerate(links[:10]):
+            # Debug: print all links on page
+            links = await self.page.query_selector_all('a')
+            logger.info(f"Found {len(links)} links on page")
+            for i, link in enumerate(links[:10]):  # First 10
                 text = await link.inner_text()
                 logger.info(f"Link {i}: {text}")
 
-            # Wait for the "Odpovědět" button to appear
-            logger.info("Waiting for 'Odpovědět' button to appear")
-            await self.page.wait_for_selector('button:has-text("Odpovědět")', timeout=10000)
+            # Also check for buttons that might be apply buttons
+            buttons = await self.page.query_selector_all('button')
+            logger.info(f"Found {len(buttons)} buttons on page")
+            for i, btn in enumerate(buttons[:10]):
+                text = await btn.inner_text()
+                logger.info(f"Button {i}: {text}")
+
+            # Wait for the "Odpovědět" link to appear
+            logger.info("Waiting for 'Odpovědět' link to appear")
+            await self.page.wait_for_selector('a:has-text("Odpovědět")', timeout=10000)
             
-            # Find and click the "Odpovědět" button
-            apply_button = await self.page.query_selector('button:has-text("Odpovědět")')
-            if apply_button:
-                logger.info("Found 'Odpovědět' button")
-                await apply_button.click()
+            # Find and click the "Odpovědět" link
+            apply_link = await self.page.query_selector('a:has-text("Odpovědět")')
+            if apply_link:
+                logger.info("Found 'Odpovědět' link")
+                await apply_link.click()
                 await self._random_delay(1, 2)
             else:
-                result["message"] = "Apply button not found"
-                await self._take_screenshot("apply_button_not_found")
+                result["message"] = "Apply link not found"
+                await self._take_screenshot("apply_link_not_found")
                 result["screenshot_path"] = self._get_latest_screenshot()
                 return result
 
