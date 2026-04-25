@@ -283,6 +283,21 @@ class JobsCzApplier:
 
             # Look for "Přihlásit se a poslat přihlášku" button
             logger.info("Looking for apply button")
+            
+            # Debug: print all buttons on page
+            buttons = await self.page.query_selector_all('button')
+            logger.info(f"Found {len(buttons)} buttons on page")
+            for i, btn in enumerate(buttons[:10]):  # First 10
+                text = await btn.inner_text()
+                logger.info(f"Button {i}: {text}")
+
+            # Also check for links that might be apply buttons
+            links = await self.page.query_selector_all('a[href*="prihlasit"], a:has-text("Přihlásit"), a:has-text("Apply")')
+            logger.info(f"Found {len(links)} potential apply links")
+            for i, link in enumerate(links[:10]):
+                text = await link.inner_text()
+                logger.info(f"Link {i}: {text}")
+
             apply_button_selectors = [
                 'button:has-text("Přihlásit se a poslat přihlášku")',
                 'button:has-text("Poslat přihlášku")',
