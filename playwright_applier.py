@@ -281,7 +281,7 @@ class JobsCzApplier:
                 result["message"] = "Already applied"
                 return result
 
-            # Look for "Přihlásit se a poslat přihlášku" button
+            # Look for "Odpovědět" button (Reply)
             logger.info("Looking for apply button")
             
             # Debug: print all buttons on page
@@ -298,32 +298,21 @@ class JobsCzApplier:
                 text = await link.inner_text()
                 logger.info(f"Link {i}: {text}")
 
-            apply_button_selectors = [
-                'button:has-text("Přihlásit se a poslat přihlášku")',
-                'button:has-text("Poslat přihlášku")',
-                'a:has-text("Přihlásit se a poslat přihlášku")',
-                'a:has-text("Poslat přihlášku")',
-                '[data-testid*="apply"]',
-                'button[class*="apply"]'
-            ]
-
-            apply_button = None
-            for selector in apply_button_selectors:
-                apply_button = await self.page.query_selector(selector)
-                if apply_button:
-                    logger.info(f"Found apply button with selector: {selector}")
-                    break
-
-            if not apply_button:
+            # Wait for the "Odpovědět" button to appear
+            logger.info("Waiting for 'Odpovědět' button to appear")
+            await self.page.wait_for_selector('button:has-text("Odpovědět")', timeout=10000)
+            
+            # Find and click the "Odpovědět" button
+            apply_button = await self.page.query_selector('button:has-text("Odpovědět")')
+            if apply_button:
+                logger.info("Found 'Odpovědět' button")
+                await apply_button.click()
+                await self._random_delay(1, 2)
+            else:
                 result["message"] = "Apply button not found"
                 await self._take_screenshot("apply_button_not_found")
                 result["screenshot_path"] = self._get_latest_screenshot()
                 return result
-
-            # Click apply button
-            logger.info("Clicking apply button")
-            await apply_button.click()
-            await self._random_delay(1, 2)
 
             # Fill application form with cover letter
             logger.info("Looking for cover letter field")
