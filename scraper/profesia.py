@@ -27,32 +27,43 @@ class ProfesiaScraper(BaseScraper):
     async def search(self, keyword: str, location: str = None) -> List[Dict]:
         """Search profesia.sk for jobs"""
         jobs = []
-        
+
         # Build search URL
         # profesia.sk format: /praca/ai-engineer/
         search_term = keyword.lower().replace(" ", "-")
-        search_url = f"{self.base_url}/praca/?search_anywhere={keyword}"
-        
+        base_url_params = f"{self.base_url}/praca/?search_anywhere={keyword}"
+
         if location:
             location_slug = location.lower().replace(" ", "-")
-            search_url = f"{self.base_url}/praca/?search_anywhere={keyword}&region={location}"
-        
+            base_url_params = f"{self.base_url}/praca/?search_anywhere={keyword}&region={location}"
+
         async with httpx.AsyncClient(headers=self.headers, follow_redirects=True, timeout=30) as client:
-            try:
-                response = await client.get(search_url)
-                response.raise_for_status()
-                
-                soup = BeautifulSoup(response.text, "lxml")
-                job_listings = soup.select("li.list-row")
-                
-                for listing in job_listings[:20]:  # Limit to 20 per search
-                    job = self._parse_listing(listing)
-                    if job:
-                        jobs.append(self.normalize_job(job))
-                
-            except Exception as e:
-                print(f"Error searching profesia.sk: {e}")
-        
+            # Scrape pages 1-3
+            for page in range(1, 4):
+                try:
+                    if page == 1:
+                        search_url = base_url_params
+                    else:
+                        search_url = f"{base_url_params}&page_num={page}"
+
+                    response = await client.get(search_url)
+                    response.raise_for_status()
+
+                    soup = BeautifulSoup(response.text, "lxml")
+                    job_listings = soup.select("li.list-row")
+
+                    if not job_listings:
+                        break  # No more results
+
+                    for listing in job_listings[:20]:  # Limit to 20 per page
+                        job = self._parse_listing(listing)
+                        if job:
+                            jobs.append(self.normalize_job(job))
+
+                except Exception as e:
+                    print(f"Error searching profesia.sk page {page}: {e}")
+                    break
+
         return jobs
     
     def _parse_listing(self, listing) -> Dict:

@@ -87,10 +87,20 @@ class JobScorer:
         
         # Calculate weighted score
         total_score = sum(
-            breakdown[k] * self.weights[k] 
+            breakdown[k] * self.weights[k]
             for k in self.weights
         )
-        
+
+        # Apply Vienna location cap for non-remote/hybrid jobs
+        # Only cap if Vienna is the PRIMARY location (starts with Vienna/Wien)
+        location = job.get("location", "").lower()
+        location_start = location.strip().lower()
+        if location_start.startswith(("vienna", "wien")):
+            if not any(term in location for term in ["remote", "hybrid"]):
+                if total_score > 0.35:
+                    total_score = 0.35
+                    reasons.append("Vienna on-site job - score capped at 0.35")
+
         # Determine decision
         if total_score >= self.auto_apply_threshold:
             decision = "auto_apply"
@@ -131,20 +141,43 @@ class JobScorer:
     def _score_keywords(self, job: Dict) -> float:
         """Score based on keyword matches"""
         text = f"{job.get('title', '')} {job.get('description', '')} {job.get('requirements', '')}".lower()
-        
+        title = job.get("title", "").lower()
+
         # Primary keywords (worth more)
         primary_matches = sum(1 for kw in self.primary_keywords if kw in text)
         primary_score = min(primary_matches / max(len(self.primary_keywords), 1) * 1.5, 1.0)
-        
+
         # Secondary keywords
         secondary_matches = sum(1 for kw in self.secondary_keywords if kw in text)
         secondary_score = min(secondary_matches / max(len(self.secondary_keywords), 1), 1.0)
-        
+
+        # Fuzzy matching for AI-related compound terms
+        ai_terms = ["ai", "artificial intelligence", "machine learning", "ml", "llm", "genai"]
+        role_terms = ["engineer", "architect", "developer", "scientist", "specialist"]
+        has_ai_term = any(term in title for term in ai_terms)
+        has_role_term = any(term in title for term in role_terms)
+
+        fuzzy_bonus = 0.0
+        if has_ai_term and has_role_term:
+            fuzzy_bonus = 0.4  # "AI Engineer", "ML Specialist", etc.
+
+        # DevOps/SRE roles with AI/Cloud context
+        devops_terms = ["devops", "site reliability", "sre", "cloud engineer", "platform engineer"]
+        ai_context = ["ai", "ml", "machine learning", "ai cloud", "industrial ai"]
+        if any(term in title for term in devops_terms):
+            if any(ctx in text for ctx in ai_context):
+                fuzzy_bonus = max(fuzzy_bonus, 0.3)  # DevOps for AI projects
+            else:
+                fuzzy_bonus = max(fuzzy_bonus, 0.1)  # Generic DevOps
+
         # Title match bonus (if keyword in title, extra weight)
-        title = job.get("title", "").lower()
         title_bonus = 0.2 if any(kw in title for kw in self.primary_keywords) else 0
-        
-        return min((primary_score * 0.7 + secondary_score * 0.3) + title_bonus, 1.0)
+
+        # Combine scores
+        base_score = primary_score * 0.7 + secondary_score * 0.3
+        total = min(base_score + title_bonus + fuzzy_bonus, 1.0)
+
+        return total
     
     def _score_company(self, job: Dict) -> float:
         """Score based on company match"""
@@ -166,22 +199,26 @@ class JobScorer:
     def _score_location(self, job: Dict) -> float:
         """Score based on location match"""
         location = job.get("location", "").lower()
-        
+
         if not location:
             return 0.3  # Unknown location
-        
+
         if "remote" in location:
             return 1.0  # Remote is always good
-        
+
         for target in self.target_locations:
             if target in location:
                 return 1.0
-        
+
+        # Slovakia is a target country - score high
+        if any(term in location for term in ["slovakia", "slovensko"]):
+            return 0.9
+
         # Nearby countries/cities
-        nearby = ["czech", "prague", "vienna", "wien", "bratislava", "slovakia", "austria"]
+        nearby = ["czech", "prague", "vienna", "wien", "bratislava", "košice", "kosice", "austria"]
         if any(n in location for n in nearby):
             return 0.7
-        
+
         return 0.2  # Not a target location
     
     def _score_salary(self, job: Dict) -> float:

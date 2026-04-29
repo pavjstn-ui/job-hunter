@@ -12,10 +12,10 @@ from .base import BaseScraper
 
 class JobsCzScraper(BaseScraper):
     """Scraper for jobs.cz - Czech Republic"""
-    
+
     source_name = "jobscz"
-    base_url = "https://www.jobs.cz"
-    
+    base_url = "https://www.jobs.cz/en/"
+
     def __init__(self, config: Dict = None):
         super().__init__(config)
         self.headers = {
@@ -23,37 +23,46 @@ class JobsCzScraper(BaseScraper):
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.9,cs;q=0.8"
         }
-    
+
     async def search(self, keyword: str, location: str = None) -> List[Dict]:
         """Search jobs.cz for jobs"""
         jobs = []
-        
-        # Build search URL
-        params = {
+
+        # Build search URL - using English version
+        base_params = {
             "q[]": keyword,
-            "locality[]": location or "praha"  # Default to Prague
         }
-        
-        search_url = f"{self.base_url}/prace/"
-        
+
+        search_url = self.base_url
+
         async with httpx.AsyncClient(headers=self.headers, timeout=30, follow_redirects=True) as client:
-            try:
-                response = await client.get(search_url, params=params)
-                response.raise_for_status()
-                
-                soup = BeautifulSoup(response.text, "lxml")
-                
-                # jobs.cz uses article elements for listings
-                job_listings = soup.select("article.SearchResultCard")
-                
-                for listing in job_listings[:20]:
-                    job = self._parse_listing(listing)
-                    if job:
-                        jobs.append(self.normalize_job(job))
-                
-            except Exception as e:
-                print(f"Error searching jobs.cz: {e}")
-        
+            # Scrape pages 1-3
+            for page in range(1, 4):
+                try:
+                    params = base_params.copy()
+                    if page > 1:
+                        params["page"] = page
+
+                    response = await client.get(search_url, params=params)
+                    response.raise_for_status()
+
+                    soup = BeautifulSoup(response.text, "lxml")
+
+                    # jobs.cz uses article elements for listings
+                    job_listings = soup.select("article.SearchResultCard")
+
+                    if not job_listings:
+                        break  # No more results
+
+                    for listing in job_listings[:20]:
+                        job = self._parse_listing(listing)
+                        if job:
+                            jobs.append(self.normalize_job(job))
+
+                except Exception as e:
+                    print(f"Error searching jobs.cz page {page}: {e}")
+                    break
+
         return jobs
     
     def _parse_listing(self, listing) -> Dict:
