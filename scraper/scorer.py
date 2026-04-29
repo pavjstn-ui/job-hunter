@@ -53,6 +53,19 @@ class JobScorer:
         
         # Salary
         self.min_salary = search_config.get("salary", {}).get("min_eur", 0)
+        
+        # Skill-based keywords
+        self.boost_keywords = [
+            "python", "ml", "ai", "llm", "rag", "agents", 
+            "machine learning", "data science", "deep learning",
+            "neural network", "nlp", "computer vision", "reinforcement learning"
+        ]
+        
+        self.reduce_keywords = [
+            "devops", "infrastructure", "linux admin", "networking", 
+            "platform engineering", "sre", "system administrator",
+            "network engineer", "cloud architect", "site reliability"
+        ]
     
     def score(self, job: Dict) -> Dict:
         """
@@ -173,9 +186,23 @@ class JobScorer:
         # Title match bonus (if keyword in title, extra weight)
         title_bonus = 0.2 if any(kw in title for kw in self.primary_keywords) else 0
 
+        # Skill-based boosting and reducing
+        boost_score = 0.0
+        reduce_score = 0.0
+        
+        # Check for boost keywords
+        for keyword in self.boost_keywords:
+            if keyword in text:
+                boost_score += 0.1  # Add 0.1 for each boost keyword found
+        
+        # Check for reduce keywords
+        for keyword in self.reduce_keywords:
+            if keyword in text:
+                reduce_score += 0.1  # Reduce score for each reduce keyword found
+        
         # Combine scores
         base_score = primary_score * 0.7 + secondary_score * 0.3
-        total = min(base_score + title_bonus + fuzzy_bonus, 1.0)
+        total = min(base_score + title_bonus + fuzzy_bonus + boost_score - reduce_score, 1.0)
 
         return total
     

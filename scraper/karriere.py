@@ -52,6 +52,9 @@ class KarriereScraper(BaseScraper):
                 for listing in job_listings[:20]:
                     job = self._parse_listing(listing)
                     if job:
+                        # Fetch full job details for description
+                        details = await self.get_job_details(job["url"])
+                        job.update(details)
                         jobs.append(self.normalize_job(job))
                 
             except Exception as e:

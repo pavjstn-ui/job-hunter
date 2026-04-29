@@ -1,7 +1,9 @@
-"""Test scoring for specific jobs to validate fixes"""
-import sqlite3
+import asyncio
 import yaml
 from scraper.scorer import JobScorer
+from scraper.profesia import ProfesiaScraper
+from scraper.jobscz import JobsCzScraper
+from scraper.karriere import KarriereScraper
 
 # Load config
 with open("config.yaml") as f:
@@ -9,46 +11,82 @@ with open("config.yaml") as f:
 
 scorer = JobScorer(config)
 
-# Connect to DB
-conn = sqlite3.connect("db/jobs.db")
-conn.row_factory = sqlite3.Row
-cursor = conn.cursor()
-
-# Get test jobs
-test_job_ids = [
-    14047,  # Deutsche Telekom - DevOps Engineer for Industrial AI Cloud (Košice)
-    14048,  # Deutsche Telekom - Senior DevOps Engineer for Industrial AI Cloud (Košice)
-    14059,  # MARKÍZA - Data Scientist pre Voyo (Bratislava)
-    14056,  # Caterpillar - Senior Site Reliability Engineer (Košice)
-    14057,  # Caterpillar - Lead Data Support Engineer (Košice)
-    13950,  # Solar Turbines - Data Scientist (Košice)
-    13959,  # Deutsche Telekom - AI Automation Engineer (Bratislava)
+# Test with provided job titles
+test_jobs = [
+    {
+        "title": "AI Engineer",
+        "company": "Test Company",
+        "location": "Bratislava, Slovakia",
+        "description": "Looking for AI Engineer with Python, ML experience...",
+        "salary_min": 50000,
+        "salary_max": 70000,
+        "currency": "EUR"
+    },
+    {
+        "title": "DevOps Engineer - Platform Team",
+        "company": "Test Company",
+        "location": "Prague, Czech Republic",
+        "description": "DevOps Engineer needed for platform engineering...",
+        "salary_min": 40000,
+        "salary_max": 60000,
+        "currency": "EUR"
+    },
+    {
+        "title": "Senior Machine Learning Engineer",
+        "company": "Test Company",
+        "location": "Vienna, Austria",
+        "description": "ML Engineer with deep learning and data science background...",
+        "salary_min": 60000,
+        "salary_max": 80000,
+        "currency": "EUR"
+    }
 ]
 
-print("=" * 80)
-print("CURRENT SCORING TEST")
-print("=" * 80)
-
-for job_id in test_job_ids:
-    cursor.execute("SELECT * FROM jobs WHERE id = ?", (job_id,))
-    row = cursor.fetchone()
-
-    if not row:
-        continue
-
-    job = dict(row)
+print("=== Testing Job Titles ===")
+for job in test_jobs:
     result = scorer.score(job)
-
-    print(f"\nID: {job['id']}")
     print(f"Title: {job['title']}")
-    print(f"Company: {job['company']}")
-    print(f"Location: {job['location']}")
-    print(f"SCORE: {result['score']:.3f} ({result['decision']})")
-    print(f"Breakdown: keyword={result['breakdown']['keyword']:.2f}, "
-          f"company={result['breakdown']['company']:.2f}, "
-          f"location={result['breakdown']['location']:.2f}, "
-          f"salary={result['breakdown']['salary']:.2f}, "
-          f"recency={result['breakdown']['recency']:.2f}")
-    print(f"Reasons: {'; '.join(result['reasons'])}")
+    print(f"Score: {result['score']:.0%}")
+    print(f"Decision: {result['decision']}")
+    print(f"Breakdown: {result['breakdown']}")
+    print(f"Reasons: {result['reasons']}")
+    print("-" * 50)
 
-conn.close()
+# Test with real job URLs (simulated)
+print("\n=== Testing Real Job URLs ===")
+
+# Simulate job data from the provided URLs
+allianz_job = {
+    "title": "Business Analytik/čka se zaměřením na vývoj AI",
+    "company": "Allianz",
+    "location": "Praha, Česká republika",
+    "description": "Hlavní zaměření na oblast rozvoje řešení s využitím umělé inteligence v péči o klienta...",
+    "salary_min": 40000,
+    "salary_max": 60000,
+    "currency": "EUR"
+}
+
+swiss_re_job = {
+    "title": "AI Engineer",
+    "company": "Swiss Re",
+    "location": "Bratislava, Slovakia",
+    "description": "We are part of Swiss Re's P&C Digital & Technology Re organization and are looking for an enthusiastic AI Engineer...",
+    "salary_min": 2400,
+    "salary_max": 4100,
+    "currency": "EUR"
+}
+
+print("Allianz Job (Business Analytik se zaměřením na vývoj AI):")
+result = scorer.score(allianz_job)
+print(f"Score: {result['score']:.0%}")
+print(f"Decision: {result['decision']}")
+print(f"Breakdown: {result['breakdown']}")
+print(f"Reasons: {result['reasons']}")
+print("-" * 50)
+
+print("Swiss Re Job (AI Engineer):")
+result = scorer.score(swiss_re_job)
+print(f"Score: {result['score']:.0%}")
+print(f"Decision: {result['decision']}")
+print(f"Breakdown: {result['breakdown']}")
+print(f"Reasons: {result['reasons']}")
