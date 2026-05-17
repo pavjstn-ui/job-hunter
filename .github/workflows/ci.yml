@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install sentence-transformers
+    - name: Import check
+      env:
+        OPENAI_API_KEY: dummy
+        ARANGO_PASSWORD: dummy
+        TELEGRAM_BOT_TOKEN: dummy
+        TELEGRAM_CHAT_ID: dummy
+      run: python -c 'from agent import JobHunterAgent; print("import OK")' 2>/dev/null || python -c 'import agent; print("import OK")'
