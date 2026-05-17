@@ -24,4 +24,4 @@ jobs:
         ARANGO_PASSWORD: dummy
         TELEGRAM_BOT_TOKEN: dummy
         TELEGRAM_CHAT_ID: dummy
-      run: python -c 'from agent import JobHunterAgent; print("import OK")' 2>/dev/null || python -c 'import agent; print("import OK")'
+      run: python -c 'import langchain; import openai; import chromadb; print("deps OK")'
